@@ -17,6 +17,7 @@ using System.Xml.XPath;
 using System.Management;
 using System.Collections.ObjectModel;
 using BnS_Multitool.Extensions;
+using OtpNet;
 
 namespace BnS_Multitool
 {
@@ -354,7 +355,17 @@ namespace BnS_Multitool
                 proc.StartInfo.UseShellExecute = false; //Required for setting environment variables to processes
                 proc.StartInfo.EnvironmentVariables.Add("BNS_PROFILE_USERNAME", ACCOUNT_CONFIG.ACCOUNTS.Saved[ACCOUNT_SELECTED_INDEX].EMAIL);
                 proc.StartInfo.EnvironmentVariables.Add("BNS_PROFILE_PASSWORD", pw);
-                proc.StartInfo.EnvironmentVariables.Add("BNS_PINCODE", ACCOUNT_CONFIG.ACCOUNTS.Saved[ACCOUNT_SELECTED_INDEX].PINCODE);
+                //TW region
+                if (REGION_BOX.SelectedIndex >= 2)
+                {
+                    Totp totp = new Totp(Base32Encoding.ToBytes(ACCOUNT_CONFIG.ACCOUNTS.Saved[ACCOUNT_SELECTED_INDEX].PINCODE));
+                    string otp = totp.ComputeTotp();
+                    proc.StartInfo.EnvironmentVariables.Add("BNS_PINCODE", otp);
+                }
+                else
+                {
+                    proc.StartInfo.EnvironmentVariables.Add("BNS_PINCODE", ACCOUNT_CONFIG.ACCOUNTS.Saved[ACCOUNT_SELECTED_INDEX].PINCODE);
+                }
                 proc.StartInfo.RedirectStandardOutput = true;
 
                 if (MainWindow.qol_xml.XPathSelectElements("config/options/option[@enable='1']").Count() > 0 || MainWindow.qol_xml.XPathSelectElement("config/gcd").Attribute("enable").Value == "1")
