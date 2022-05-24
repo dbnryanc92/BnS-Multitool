@@ -56,7 +56,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\favicon.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\favicon_tw.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
@@ -622,6 +622,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\agon\ue4agonhigh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\favicon_tw.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

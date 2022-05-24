@@ -325,7 +325,7 @@ namespace BnS_Multitool
             // Load our main page.
             SetCurrentPage("MainPage");
 
-            VERSION_LABEL.Text = string.Format("BnS Multi Tool Version: {0}", FileVersion());
+            VERSION_LABEL.Text = string.Format("BnS Multi Tool (Tonic {0}) - 玉蜂TW版", FileVersion());
 
             // Check version in settings.json and overwrite if they don't match, why the fuck do I still do this? will probably remove later
             if (SystemConfig.SYS.VERSION != FileVersion())

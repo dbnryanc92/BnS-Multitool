@@ -312,8 +312,8 @@
             </StackPanel>
             <StackPanel DockPanel.Dock="Top">
                 <StackPanel Orientation="Horizontal" Height="22" HorizontalAlignment="Right">
-                    <StackPanel Width="255" Orientation="Horizontal">
-                        <TextBlock x:Name="VERSION_LABEL" Foreground="White" FontFamily="Arial" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" Width="221">BnS Multi Tool Version: 1.1.0</TextBlock>
+                    <StackPanel Width="300" Orientation="Horizontal">
+                        <TextBlock x:Name="VERSION_LABEL" Foreground="White" FontFamily="Arial" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" Width="300">BnS Multi Tool (Tonic 1.1.0) - 玉蜂TW版</TextBlock>
                     </StackPanel>
                     <Button Visibility="Hidden" BorderThickness="1" Style="{StaticResource TitleBarButtons}" x:Name="MultiTool_UPDATE" Content="&#xE118;Update Available " Click="UPDATE_BTN_CLICK" FontFamily="Segoe UI Symbol" FontSize="16"/>
                     <Button BorderThickness="1" Style="{StaticResource TitleBarButtons}" FontFamily="Segoe UI Symbol" Content=" &#xe115; " FontSize="14" Click="Settings_Click" />

@@ -66,7 +66,7 @@ namespace BnS_Multitool
                 {
                      Application.Current.Dispatcher.BeginInvoke((Action)delegate
                     {
-                        var dialog = new ErrorPrompt("Update available, please be sure to read the change log for any critical changes.\r\rOnline Version: " + onlineJson.VERSION + "\rLocal: " + SystemConfig.SYS.VERSION, true);
+                        var dialog = new ErrorPrompt("偵測到新版本(Tonic)，若更新將取代玉蜂TW版的改動，慎重更新\r\rOnline Version: " + onlineJson.VERSION + "\rLocal: " + SystemConfig.SYS.VERSION, true);
                         dialog.ShowDialog();
                     });
 
